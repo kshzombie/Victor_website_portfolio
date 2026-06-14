@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geospatial Engineer | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <aside class="sidebar" id="sidebar">
+            <header>
+                <h1>Victor Oduor</h1>
+                <p class="subtitle">Geospatial Engineering Student</p>
+            </header>
+
+            <nav class="sidebar-nav">
+                <section id="story">
+                    <h2>My Story</h2>
+                    <p>I am a final-year Geospatial Engineering student focused on the intersection of traditional surveying and modern Web-GIS development.</p>
+                </section>
+
+                <section id="projects">
+                    <h2>Projects Portfolio</h2>
+                    <div class="control-group">
+                        <label for="project-selector">Select a Project View:</label>
+                        <select id="project-selector" class="geo-dropdown">
+                            <option value="default">-- Choose an Analysis --</option>
+                            <option value="subcounties" data-bounds="[[-1.301, 36.7], [-1.2681, 37.1]]">Nairobi Pothole Monitoring</option>
+                            <option value="qgis-map">QGIS: Earthquakes</option>
+                            <option value="population-density">QGIS: NYC Population Density</option>
+                            <option value="expressway2">Nairobi Expressway</option>
+                            <option value="edinburgh-castle">Edinburgh Castle</option>
+                            <option value="golden-gate-bridge">Golden Gate Bridge</option>
+                        </select>
+                    </div>
+    
+                    <div id="project-description" class="project-info-box">
+                        <p>Select a project from the dropdown to visualize spatial data.</p>
+                    </div>
+                </section>
+
+                <section id="thoughts">
+                    <h2>Spatial Thoughts</h2>
+                    <article class="blog-preview">
+                        <h3>Intelligent Transport Systems</h3>
+                        <p>Exploring how LIDAR and DSRC sensors are reshaping urban traffic management...</p>
+                        <a href="#">Read More →</a>
+                    </article>
+                </section>
+            </nav>
+
+            <footer>
+                <p>&copy; 2026 | Built from Bottom-Up</p>
+            </footer>
+        </aside>
+
+        <div id="resizer" class="resizer"></div>
+        <main id="map"></main>
+    </div>
+
+    <!-- FIXED VIEWER OVERLAY: Single container, distinct elements -->
+    <div id="image-viewer" class="viewer-overlay" style="display: none;">
+        <span class="close-viewer">&times;</span>
+        <img id="viewer-img" src="" alt="QGIS Export" style="display: none;">
+        <video id="viewer-video" controls loop muted playsinline style="display: none; max-width: 90%;"></video>
+        <div id="viewer-caption"></div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
